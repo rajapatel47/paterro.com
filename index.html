@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paterro.com - Coming Soon</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #030031; /* Vibrant background color */
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+        h1 {
+            color: #fff; /* Text color on the vibrant background */
+        }
+        p {
+            color: #fff; /* Text color on the vibrant background */
+        }
+        .countdown {
+            font-size: 24px;
+            color: #fff; /* Text color on the vibrant background */
+        }
+        .url{
+            text-decoration: none;
+        }
+        .highlight-text {
+            font-weight: bold;
+            font-size: 100px;
+            position: relative;
+            animation: shimmer 2s infinite; /* Professional shimmer animation */
+        }
+        @keyframes shimmer {
+            0% {
+                color: #007BFF; /* Starting color */
+             
+            }
+            50% {
+                color: #00FFC4; /* Ending color */
+             
+            }
+            100% {
+                color: #007BFF; /* Back to starting color */
+             
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to</h1>
+        <a class="url" href="http://paterro.com">
+        <h1 class="highlight-text">Paterro.com</h1>
+        </a>
+        <p>We are working hard to bring you the best technology and services reviews.</p>
+        <p>Stay tuned for our launch!</p>
+        <div class="countdown">
+            <p>Website launching in:</p>
+            <p id="countdown">30 days 00:00:00</p>
+        </div>
+    </div>
+
+    <script>
+        // Replace the date below with your actual launch date
+        const launchDate = new Date('2024-02-29T00:00:00').getTime();
+
+        const countdownElement = document.getElementById('countdown');
+
+        function updateCountdown() {
+            const currentDate = new Date().getTime();
+            const timeRemaining = launchDate - currentDate;
+
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+            countdownElement.textContent = `${days} days ${hours}:${minutes}:${seconds}`;
+
+            if (timeRemaining <= 0) {
+                countdownElement.textContent = 'Website is live!';
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
