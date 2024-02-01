@@ -16,6 +16,8 @@
             font-family: Arial, sans-serif;
             text-align: center;
             background-color: #030031; /* Vibrant background color */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
         }
         .container {
             max-width: 800px;
@@ -24,12 +26,14 @@
         }
         h1 {
             color: #fff; /* Text color on the vibrant background */
+            font-size: 24px; /* Adjust font size for smaller screens */
         }
         p {
             color: #fff; /* Text color on the vibrant background */
+            font-size: 18px; /* Adjust font size for smaller screens */
         }
         .countdown {
-            font-size: 24px;
+            font-size: 18px; /* Adjust font size for smaller screens */
             color: #fff; /* Text color on the vibrant background */
         }
         .url{
@@ -37,7 +41,7 @@
         }
         .highlight-text {
             font-weight: bold;
-            font-size: 100px;
+            font-size: 40px; /* Adjust font size for smaller screens */
             position: relative;
             animation: shimmer 2s infinite; /* Professional shimmer animation */
         }
@@ -52,13 +56,32 @@
                 color: #007BFF; /* Back to starting color */
             }
         }
+
+        /* Add responsive styles for smaller screens */
+        @media screen and (max-width: 600px) {
+            .container {
+                padding: 20px; /* Adjust padding for smaller screens */
+            }
+            h1 {
+                font-size: 20px;
+            }
+            p {
+                font-size: 16px;
+            }
+            .countdown {
+                font-size: 16px;
+            }
+            .highlight-text {
+                font-size: 30px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Welcome to</h1>
         <a class="url" href="http://paterro.com">
-        <h1 class="highlight-text">Paterro.com</h1>
+            <h1 class="highlight-text">Paterro.com</h1>
         </a>
         <p>Your source for technology and services reviews.</p>
         <p>Stay tuned for our launch!</p>
